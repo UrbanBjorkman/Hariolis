@@ -16,13 +16,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Hariolis", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink(" - Like i predicted", "Index", "Home")</li>
+                    @*<li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
                 </ul>
             </div>
         </div>
@@ -31,12 +31,27 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Hariolis - Like i predicted</p>
         </footer>
     </div>
 
+    <script src="//www.parsecdn.com/js/parse-1.3.0.min.js"></script>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    
+    <script type="text/javascript">
+    $(document).ready(function () {
+        Parse.initialize("ZfjYa9R91ljBfFZ3798AJtAvvOSZIeTFzMNDkMma", "J0Y0dCq88ZNHbcCDMIky1NbpXxYuANb266JlZFWv");
+
+        //var TestObject = Parse.Object.extend("TestObject");
+        //var testObject = new TestObject();
+        //testObject.save({ foo: "bar" }).then(function (object) {
+        //    alert("yay! it worked");
+        //});
+    });
+
+    </script>
+
 </body>
 </html>
