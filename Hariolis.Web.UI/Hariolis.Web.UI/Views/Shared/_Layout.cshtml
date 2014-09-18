@@ -42,14 +42,46 @@
     @RenderSection("scripts", required: false)
     
     <script type="text/javascript">
-    $(document).ready(function () {
-        Parse.initialize("ZfjYa9R91ljBfFZ3798AJtAvvOSZIeTFzMNDkMma", "J0Y0dCq88ZNHbcCDMIky1NbpXxYuANb266JlZFWv");
+        $(document).ready(function () {
 
-        var TestObject = Parse.Object.extend("TestObject");
-        var testObject = new TestObject();
-        testObject.save({ foo: "bar" }).then(function (object) {
-            alert("yay! it worked");
-        });
+            Parse.initialize("ZfjYa9R91ljBfFZ3798AJtAvvOSZIeTFzMNDkMma", "J0Y0dCq88ZNHbcCDMIky1NbpXxYuANb266JlZFWv");
+
+            $(".jsDateSet").click(function () {
+                var d_add = $(this).data("date");
+
+                var RemindDate = new Date();
+                RemindDate.setMonth(RemindDate.getMonth() + d_add);
+
+                var d = RemindDate.getDate();
+                var m = RemindDate.getMonth();
+                m += 1;  // JavaScript months are 0-11
+                var y = RemindDate.getFullYear();
+
+
+                $('#predictionDate').val(y + '-' + m + '-' + d);
+
+            });
+
+            $(".jsSave").click(function () {
+                
+                var p_text = $("#predictionText").val();     
+                var p_date = $("#predictionDate").val();     
+                var emails = $("#email").val();
+                var Prediction = Parse.Object.extend("Prediction");
+                var prediction = new Prediction();
+                prediction.save(
+                {
+                    text:  p_text,
+                    date: p_date,
+                    email: emails
+                }).then(function (object) {
+                    
+                });
+
+            });
+
+        
+
     });
 
     </script>

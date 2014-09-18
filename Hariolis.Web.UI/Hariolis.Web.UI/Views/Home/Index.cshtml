@@ -2,17 +2,19 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>Hariolis</h1>
+<div class="jumbotron" style="">
+    <h1>Re-Mindz</h1>
     <p class="lead">1) Summarize your prediction in the box below</p>
-    <textarea style="width: 90%"></textarea>
-
+    <textarea style="" id="predictionText">Windows phone is dead</textarea>
+    <br /><br />
     <p class="lead">2) When should we remind you?</p>
-
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-    
-    <p class="lead">3) How do we contact you?</p>
-    <input type="text"/>
+    <p><div  data-date="1" class="jsDateSet btn btn-primary btn-lg">Next month</div> <div data-date="6" class="jsDateSet btn btn-primary btn-lg">Six months</div> <div data-date="12" class="jsDateSet btn btn-primary btn-lg">A year from now</div></p>
+    <input type="text" id="predictionDate" />
+    <br/><br/>
+    <p class="lead">3) How do we contact you?  (enter multiple emails separated by ;)</p>
+    <input type="text" id="email" style="" value="urban.bjorkman@gmail.com"/>
+    <br/><br/>
+    <p><div class="jsSave btn btn-primary btn-lg">Save prediction</div></p>
 </div>
 
 <div class="row">
