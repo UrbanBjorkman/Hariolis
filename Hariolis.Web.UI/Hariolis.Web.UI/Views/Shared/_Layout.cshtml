@@ -64,8 +64,12 @@
 
             $(".jsSave").click(function () {
                 
+                from = $("#predictionDate").val().split("-");
+                d = new Date(from[0], from[1] - 1, from[2]);
+                alert(d);
+
                 var p_text = $("#predictionText").val();     
-                var p_date = $("#predictionDate").val();     
+                var p_date = d;     
                 var emails = $("#email").val();
                 var Prediction = Parse.Object.extend("Prediction");
                 var prediction = new Prediction();
